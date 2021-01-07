@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
-    body: String,
     captain: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     nameTeam: String,
     phone: String,
@@ -38,7 +37,7 @@ const TeamSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 // Requires population of author
-TeamSchema.methods.toJSONFor = function (user) {
+TeamSchema.methods.toJSONForTeam = function (user) {
     return {
         id: this._id,
         nameTeam: this.nameTeam,
