@@ -37,19 +37,15 @@ function AppRoute() {
         return null;
     }
     return (
-        <React.Fragment>
+        <AuthProvider>
             <Router>
                 <HomeScene default path="/"/>
                 <LoginScene path="login"/>
                 <RegisterScene path="register"/>
             </Router>
 
-        </React.Fragment>
+        </AuthProvider>
     )
 }
 
-export default () => (
-    <AuthProvider>
-        <AppRoute/>
-    </AuthProvider>
-)
+export default AppRoute;

@@ -2,20 +2,30 @@ const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
     captain: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    nameTeam: String,
-    phone: String,
+    nameTeam: {
+        type: String,
+        require: true
+    },
+    phone: {
+        type: String,
+        require: true
+    },
     members: [{
         _id: {
-            type: String
+            type: String,
+            require: true
         },
         email: {
-            type: String
+            type: String,
+            require: true
         },
         fullName: {
-            type: String
+            type: String,
+            require: true
         },
         phone: {
-            type: String
+            type: String,
+            require: true
         }
     }],
     product: {
@@ -47,7 +57,7 @@ TeamSchema.methods.toJSONForTeam = function (user) {
         amount: this.amount,
         limit: this.limit,
         createdAt: this.createdAt,
-        captain: this.captain.toProfileJSONFor(user)
+        captain: user.email
     };
 };
 
