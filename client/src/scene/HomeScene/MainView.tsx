@@ -1,9 +1,10 @@
 import React, {useEffect, useReducer} from "react";
 import {initialState, teamReducer} from "../../reducers/team";
 import {getListTeam} from "../../services/api/TeamAPI";
+import useTeam from "../../context/team";
 
 export default function MainView() {
-    const [{teams, members, loading, error}, dispatch] = useReducer(teamReducer, initialState);
+    const {state: {teams, members, loading, error}, dispatch} = useTeam();
 
     useEffect(() => {
         dispatch({type: 'FETCH_TEAM_BEGIN'})
@@ -12,9 +13,8 @@ export default function MainView() {
         const fetchTeams = async () => {
             try {
                 const res = await getListTeam();
-                console.log(res.data)
                 if (!ignore) {
-                    dispatch({type: 'FETCH_TEAM_SUCCESS', payload: res.data})
+                    dispatch({type: 'FETCH_TEAM_SUCCESS', payload: {teams: res.data.teams}})
                 }
             } catch (error) {
                 dispatch({
