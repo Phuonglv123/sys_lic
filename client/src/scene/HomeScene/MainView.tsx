@@ -65,27 +65,19 @@ export default function MainView() {
                                 </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap">
+                                {teams.map((k, i) => {
+                                    return (
+                                        <tr key={i}>
+                                            <td className="px-6 py-4 whitespace-nowrap">{k.nameTeam}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">{k.product}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">0</td>
 
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                            <span
-                                                className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                              Active
-                                            </span>
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        Admin
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    </td>
-                                </tr>
-
+                                            <td className="px-6 py-4 whitespace-nowrap">{k.amount}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">{k.limit}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">{k.captain}</td>
+                                        </tr>
+                                    );
+                                })}
                                 </tbody>
                             </table>
                         </div>
