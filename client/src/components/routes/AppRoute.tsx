@@ -5,12 +5,13 @@ import {getCurrentUser} from "../../services/api/AuthAPI";
 import HomeScene from "../../scene/HomeScene/HomeScene";
 import LoginScene from "../../scene/LoginScene/LoginScene";
 import RegisterScene from "../../scene/RegisterScene/RegisterScene";
+import {Header} from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function AppRoute() {
     const {state: {user, isAuthenticated}, dispatch,} = useAuth();
     useEffect(() => {
         let ignore = false;
-        console.log(user)
 
         async function fetchUser() {
             try {
@@ -37,15 +38,20 @@ function AppRoute() {
         return null;
     }
     return (
-        <AuthProvider>
+        <React.Fragment>
+            <Header/>
             <Router>
                 <HomeScene default path="/"/>
                 <LoginScene path="login"/>
                 <RegisterScene path="register"/>
             </Router>
-
-        </AuthProvider>
+            <Footer/>
+        </React.Fragment>
     )
 }
 
-export default AppRoute;
+export default () => (
+    <AuthProvider>
+        <AppRoute/>
+    </AuthProvider>
+);

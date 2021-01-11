@@ -5,6 +5,18 @@ const Team = mongoose.model('Team');
 const User = mongoose.model('User');
 const auth = require('../auth');
 
+router.get('/list-team', function (req, res, next) {
+    Team.find().then(function (teams) {
+        res.json({
+            teams: teams.map(function (team) {
+                return team.toJSONForTeam()
+            })
+        });
+    }).catch(e => {
+        return res.status(500).json({error: 'server not found'})
+    })
+})
+
 router.post('/create-team', function (req, res, next) {
     User.findOne({email: req.body.email}).then(email => {
         if (email) return res.status(400).json({error: 'Please login to create team'});
@@ -12,7 +24,7 @@ router.post('/create-team', function (req, res, next) {
             if (nameTeam) return res.status(400).json({error: 'Name team is does exits!'});
             const teams = new Team({...req.body})
             return teams.save().then(function () {
-                res.json({team: teams.toJSONForTeam(req.body.email)});
+                res.json({team: teams.toJSONForTeam()});
             })
         }).catch(next)
     }).catch(e => {

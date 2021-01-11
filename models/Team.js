@@ -47,17 +47,22 @@ const TeamSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 // Requires population of author
-TeamSchema.methods.toJSONForTeam = function (user) {
+TeamSchema.methods.toJSONForTeam = function () {
     return {
-        id: this._id,
+        id: this.id,
         nameTeam: this.nameTeam,
         phone: this.phone,
-        members: this.members,
+        members: [{
+            id: this.members._id,
+            email: this.members.email,
+            fullName: this.members.fullName,
+            phone: this.members.phone
+        }],
         product: this.product,
         amount: this.amount,
         limit: this.limit,
         createdAt: this.createdAt,
-        captain: user.email
+        captain: this.captain
     };
 };
 

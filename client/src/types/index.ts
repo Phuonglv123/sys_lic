@@ -1,8 +1,7 @@
 export interface IProfile {
-    username: string;
-    bio: string;
-    image: string;
-    following: boolean;
+    email: string;
+    fullName: string;
+    phone: string
 }
 
 export interface IArticle {
@@ -24,6 +23,25 @@ export interface IComment {
     updatedAt: Date;
     body: string;
     author: IProfile;
+}
+
+export interface IMembers {
+    id: string;
+    email: string;
+    phone: string;
+    fullName: string;
+}
+
+export interface ITeam {
+    id: string;
+    nameTeam: string;
+    product: string;
+    amount: string;
+    limit: string;
+    phone: string;
+    captain: string;
+    members: IMembers;
+    createdAt: Date;
 }
 
 export interface IUser {
