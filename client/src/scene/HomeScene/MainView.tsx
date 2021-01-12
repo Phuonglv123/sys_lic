@@ -62,6 +62,10 @@ export default function MainView() {
                                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Captain
                                     </th>
+                                    <th scope="col"
+                                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Action
+                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
@@ -75,6 +79,12 @@ export default function MainView() {
                                             <td className="px-6 py-4 whitespace-nowrap">{k.amount}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{k.limit}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{k.captain}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <button type="button"
+                                                        className=" flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                                                    Join
+                                                </button>
+                                            </td>
                                         </tr>
                                     );
                                 })}

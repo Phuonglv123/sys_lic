@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from '@reach/router';
 
 export default function Footer() {
     return (
@@ -14,34 +15,34 @@ export default function Footer() {
                             Getting Started
                         </div>
 
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Installation
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Release Notes
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Upgrade Guide
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Using with Preprocessors
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Optimizing for Production
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Browser Support
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             IntelliSense
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="p-5 w-1/2 sm:w-4/12 md:w-3/12">
@@ -49,34 +50,34 @@ export default function Footer() {
                             Core Concepts
                         </div>
 
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Utility-First
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Responsive Design
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Hover, Focus, & Other States
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Dark Mode
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Adding Base Styles
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Extracting Components
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Adding New Utilities
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="p-5 w-1/2 sm:w-4/12 md:w-3/12">
@@ -84,34 +85,34 @@ export default function Footer() {
                             Customization
                         </div>
 
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Configuration
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Theme Configuration
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Breakpoints
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Customizing Colors
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Customizing Spacing
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Configuring Variants
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Plugins
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="p-5 w-1/2 sm:w-4/12 md:w-3/12">
@@ -119,22 +120,22 @@ export default function Footer() {
                             Community
                         </div>
 
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             GitHub
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Discord
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             Twitter
-                        </a>
-                        <a href="#"
-                           className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        </Link>
+                        <Link to="/"
+                              className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                             YouTube
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="pt-2">
@@ -146,21 +147,21 @@ export default function Footer() {
                         </div>
 
                         <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
-                            <a href="#" className="w-6 mx-1">
+                            <Link to="/" className="w-6 mx-1">
                                 <i className="uil uil-facebook-f"></i>
-                            </a>
-                            <a href="#" className="w-6 mx-1">
+                            </Link>
+                            <Link to="/" className="w-6 mx-1">
                                 <i className="uil uil-twitter-alt"></i>
-                            </a>
-                            <a href="#" className="w-6 mx-1">
+                            </Link>
+                            <Link to="/" className="w-6 mx-1">
                                 <i className="uil uil-youtube"></i>
-                            </a>
-                            <a href="#" className="w-6 mx-1">
+                            </Link>
+                            <Link to="/" className="w-6 mx-1">
                                 <i className="uil uil-linkedin"></i>
-                            </a>
-                            <a href="#" className="w-6 mx-1">
+                            </Link>
+                            <Link to="/" className="w-6 mx-1">
                                 <i className="uil uil-instagram"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

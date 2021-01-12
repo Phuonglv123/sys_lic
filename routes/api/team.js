@@ -20,11 +20,30 @@ router.get('/list-team', function (req, res, next) {
 router.post('/create-team', function (req, res, next) {
     User.findOne({email: req.body.email}).then(email => {
         if (email) return res.status(400).json({error: 'Please login to create team'});
-        Team.findOne({nameTeam: req.body.nameTeam}).then(nameTeam => {
-            if (nameTeam) return res.status(400).json({error: 'Name team is does exits!'});
-            const teams = new Team({...req.body})
-            return teams.save().then(function () {
-                res.json({team: teams.toJSONForTeam()});
+        Team.findOne({nameTeam: req.body.nameTeam}).then(name => {
+            if (name) return res.status(400).json({error: 'Name team is does exits!'});
+
+        })
+    })
+})
+
+router.post('/create-team-auth', auth.required, function (req, res, next) {
+    Team.findOne({nameTeam: req.body.team.nameTeam}).then(name => {
+        if (name) return res.status(400).json({error: 'Name team is does exits!'});
+        User.findById(req.payload.id).then(function (user) {
+            if (!user) {
+                return res.sendStatus(401);
+            }
+            let team = new Team();
+            team.nameTeam = req.body.team.nameTeam;
+            team.captain = req.body.team.captain;
+            team.phone = req.body.team.phone;
+            team.product = req.body.team.product;
+            team.amount = req.body.team.amount;
+            team.limit = req.body.team.limit;
+
+            return team.save().then(function () {
+                res.json({team: team.toJSONForTeam(user)});
             })
         }).catch(next)
     }).catch(e => {
@@ -32,20 +51,11 @@ router.post('/create-team', function (req, res, next) {
     })
 })
 
-router.post('/create-team-auth', auth.required, function (req, res, next) {
-    Team.findOne({nameTeam: req.body.nameTeam}).then(name => {
-        if (name) return res.status(400).json({error: 'Name team is does exits!'});
-        User.findById(req.payload.id).then(function (user) {
-            if (!user) {
-                return res.sendStatus(401);
-            }
-
-            let team = new Team({...req.body});
-
-            return team.save().then(function () {
-                res.json({team: team.toJSONForTeam(user)});
-            })
-        }).catch(next)
+router.get('/team-detail/:teamId', function (req, res, next) {
+    const teamId = req.params.teamId;
+    Team.findById(teamId).then(team => {
+        if (!team) return res.status(400).json({error: 'Team is not found'})
+        return res.status(200).json({team: team.toJSONForTeam()})
     }).catch(e => {
         return res.status(500).json({error: 'server not found'})
     })

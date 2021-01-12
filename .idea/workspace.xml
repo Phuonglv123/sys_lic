@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4c8839d-0cce-408b-93ed-1908d884a9c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/AccountScene.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyAccount.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/LoginScene/LoginScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/LoginScene/LoginScene.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/team.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -99,7 +111,8 @@
       <workItem from="1609926907269" duration="613000" />
       <workItem from="1609984278503" duration="13623000" />
       <workItem from="1610013026670" duration="158000" />
-      <workItem from="1610330026822" duration="23110000" />
+      <workItem from="1610330026822" duration="23140000" />
+      <workItem from="1610416062557" duration="22337000" />
     </task>
     <task id="LOCAL-00001" summary="đasa">
       <created>1610013122141</created>
@@ -136,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610363046351</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="đasa">
+      <created>1610363708151</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610363708151</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
