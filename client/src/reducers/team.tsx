@@ -1,14 +1,16 @@
-import {IMembers, ITeam} from "../types";
+import {IMembers, IOrder, ITeam} from "../types";
 
 export type TeamAction =
     | { type: 'FETCH_TEAM_BEGIN' }
     | { type: 'FETCH_TEAM_SUCCESS'; payload: { teams: Array<ITeam> }; }
     | { type: 'FETCH_TEAM_ERROR'; error: string }
-    | { type: 'ADD_MEMBER', payload: { members: IMembers } };
+    | { type: 'ADD_MEMBER', payload: { members: IMembers } }
+    | { type: 'CREATE_ORDER', payload: { orders: {} } }
 
 export interface TeamState {
     teams: Array<ITeam>;
     members: Array<IMembers>;
+    orders: {};
     loading: boolean;
     error: string | null;
 }
@@ -16,6 +18,7 @@ export interface TeamState {
 export const initialState: TeamState = {
     teams: [],
     members: [],
+    orders: {},
     loading: false,
     error: null
 }
@@ -46,6 +49,11 @@ export function teamReducer(state: TeamState, action: TeamAction): TeamState {
             return {
                 ...state,
                 members: [action.payload.members, ...state.members]
+            }
+        case "CREATE_ORDER":
+            return {
+                ...state,
+                orders: action.payload.orders
             }
         default:
             return state;

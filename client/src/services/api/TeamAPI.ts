@@ -11,6 +11,10 @@ type Team = {
 }
 
 
+export function getListMyTeam(userId: string | undefined) {
+    return API.get<Teams>(`/team/my-team/${userId}`)
+}
+
 export function getListTeam() {
     return API.get<Teams>('/team/list-team')
 }

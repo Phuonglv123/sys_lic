@@ -11,9 +11,7 @@ export default function HomeScene(_: RouteComponentProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <Banner/>
             <FormCreateTeam/>
-            <TeamProvider>
-                <MainView/>
-            </TeamProvider>
+            <MainView/>
         </div>
     );
 }

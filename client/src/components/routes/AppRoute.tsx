@@ -10,6 +10,8 @@ import Footer from "../Footer/Footer";
 import TeamDetailScene from "../../scene/TeamDetailScene/TeamDetailScene";
 import AccountScene from "../../scene/AccountScene/AccountScene";
 import PrivateRoute from "./PrivateRoute";
+import {TeamProvider} from "../../context/team";
+import OrderScene from "../../scene/OrderScene/OrderScene";
 
 function AppRoute() {
     const {state: {user, isAuthenticated}, dispatch,} = useAuth();
@@ -48,7 +50,8 @@ function AppRoute() {
                 <LoginScene path="login"/>
                 <RegisterScene path="register"/>
                 <TeamDetailScene path='/detail/:teamId'/>
-                <PrivateRoute as={AccountScene} path='account/*' />
+                <OrderScene path='order'/>
+                <PrivateRoute as={AccountScene} path='account/*'/>
             </Router>
             <Footer/>
         </React.Fragment>
@@ -57,6 +60,8 @@ function AppRoute() {
 
 export default () => (
     <AuthProvider>
-        <AppRoute/>
+        <TeamProvider>
+            <AppRoute/>
+        </TeamProvider>
     </AuthProvider>
 );

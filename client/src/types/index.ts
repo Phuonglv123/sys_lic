@@ -40,8 +40,17 @@ export interface ITeam {
     limit: string;
     phone: string;
     captain: string;
-    members: IMembers;
+    members: IMembers[];
     createdAt: Date;
+}
+
+export interface IOrder{
+    id: string;
+    email: string;
+    fullName: string;
+    phone: string;
+    amount: string;
+    teamId: string;
 }
 
 export interface IUser {

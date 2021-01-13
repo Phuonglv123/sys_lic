@@ -17,19 +17,22 @@ router.get('/list-team', function (req, res, next) {
     })
 })
 
-router.post('/create-team', function (req, res, next) {
-    User.findOne({email: req.body.email}).then(email => {
-        if (email) return res.status(400).json({error: 'Please login to create team'});
-        Team.findOne({nameTeam: req.body.nameTeam}).then(name => {
-            if (name) return res.status(400).json({error: 'Name team is does exits!'});
-
-        })
+router.get('/my-team/:userId', auth.required, function (req, res, next) {
+    const userId = req.params.userId;
+    Team.find({captain: userId}).then(function (myTeam) {
+        return res.json({
+            teams: myTeam.map(function (team) {
+                return team.toJSONForTeam()
+            })
+        });
+    }).catch(e => {
+        return res.status(500).json({error: 'server not found'})
     })
 })
 
 router.post('/create-team-auth', auth.required, function (req, res, next) {
     Team.findOne({nameTeam: req.body.team.nameTeam}).then(name => {
-        if (name) return res.status(400).json({error: 'Name team is does exits!'});
+        if (name) return res.status(401).json({error: 'Name team is does exits!'});
         User.findById(req.payload.id).then(function (user) {
             if (!user) {
                 return res.sendStatus(401);

@@ -2,6 +2,7 @@ import React from "react";
 import {Link, RouteComponentProps, Router,} from "@reach/router";
 import MyAccount from "./MyAccount";
 import MyTeam from "./MyTeam";
+import MyOrder from "./MyOrder";
 
 
 export default function AccountScene(_: RouteComponentProps) {
@@ -36,6 +37,7 @@ export default function AccountScene(_: RouteComponentProps) {
                     <Router>
                         <MyAccount default={true}/>
                         <MyTeam path='my-team'/>
+                        <MyOrder path='my-order'/>
                     </Router>
                 </div>
             </div>

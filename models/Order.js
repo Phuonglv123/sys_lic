@@ -9,12 +9,11 @@ const OrderSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    member: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    team: {type: mongoose.Schema.Types.ObjectId, ref: 'Team'}
+    teamId: {type: mongoose.Schema.Types.ObjectId, ref: 'Team'}
 }, {timestamps: true});
 
 // Requires population of author
-OrderSchema.methods.toJSONFor = function (user, team) {
+OrderSchema.methods.toJSONForOrder = function (user, team) {
     return {
         id: this._id,
         email: this.email,
@@ -23,8 +22,7 @@ OrderSchema.methods.toJSONFor = function (user, team) {
         amount: this.amount,
         isPaid: this.isPaid,
         createdAt: this.createdAt,
-        member: this.member.toProfileJSONFor(user),
-        team: this.team.toProfileJSONFor(team)
+        teamId: this.team.toJSONForTeam(team)
     };
 };
 
