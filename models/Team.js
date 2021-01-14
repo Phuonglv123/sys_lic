@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
     captain: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    nameTeam: {
-        type: String,
-        require: true
-    },
     phone: {
         type: String,
         require: true
@@ -33,10 +29,6 @@ const TeamSchema = new mongoose.Schema({
         require: true
     },
     amount: {
-        type: Number,
-        require: true
-    },
-    limit: {
         type: Number,
         require: true
     },

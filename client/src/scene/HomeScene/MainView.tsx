@@ -71,7 +71,7 @@ export default function MainView() {
                                 <tr>
                                     <th scope="col"
                                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Name team
+                                        Captain
                                     </th>
                                     <th scope="col"
                                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -87,14 +87,6 @@ export default function MainView() {
                                     </th>
                                     <th scope="col"
                                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Limit
-                                    </th>
-                                    <th scope="col"
-                                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Captain
-                                    </th>
-                                    <th scope="col"
-                                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Action
                                     </th>
                                 </tr>
@@ -105,15 +97,13 @@ export default function MainView() {
                                         <tr key={i}>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <Link to={`/detail/${k.id}`}>
-                                                    {k.nameTeam}
+                                                    {k.captain}
                                                 </Link>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">{k.product}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">0</td>
 
                                             <td className="px-6 py-4 whitespace-nowrap">{k.amount}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">{k.limit}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">{k.captain}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <button type="button"
                                                         style={{transition: "all .15s ease"}}
