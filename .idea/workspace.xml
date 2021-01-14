@@ -2,26 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4c8839d-0cce-408b-93ed-1908d884a9c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/reducers/order.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyOrder.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scene/OrderScene/OrderScene.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/api/OrderAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/craco.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/style.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/team.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/team.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scene/AccountScene/AccountScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/AccountScene.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scene/AccountScene/MyAccount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyAccount.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +31,7 @@
         <option value="TypeScript File" />
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -57,6 +54,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -121,6 +119,8 @@
       <workItem from="1610416062557" duration="22337000" />
       <workItem from="1610446520527" duration="32000" />
       <workItem from="1610503060320" duration="19957000" />
+      <workItem from="1610588715625" duration="8134000" />
+      <workItem from="1610598125582" duration="10194000" />
     </task>
     <task id="LOCAL-00001" summary="đasa">
       <created>1610013122141</created>

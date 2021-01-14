@@ -1,0 +1,15 @@
+.TeamDetailScene {
+  @apply bg-gray-300 h-full;
+
+  .row {
+    @apply grid grid-cols-3 gap-2 p-10;
+
+    .col2 {
+      @apply col-span-2 bg-white text-black rounded-md shadow-lg
+    }
+
+    .col3 {
+      @apply bg-white text-black rounded-md shadow-lg p-5 col-span-1
+    }
+  }
+}

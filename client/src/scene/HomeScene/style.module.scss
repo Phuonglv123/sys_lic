@@ -1,0 +1,24 @@
+@mixin input {
+  @apply block w-full border-default h-16 p-5;
+}
+
+@mixin button {
+  @apply h-16 bg-blue-500 border-default text-white font-medium font-sans text-base rounded-md
+}
+
+.homeScene {
+  @apply max-w-full mx-auto;
+
+  .formCreate {
+    @apply bg-white w-11-12 mx-auto p-10;
+
+    .input {
+      @include input
+    }
+
+    .button {
+      @include button;
+      width: 10em;
+    }
+  }
+}

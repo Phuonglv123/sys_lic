@@ -44,16 +44,18 @@ function AppRoute() {
     }
     return (
         <React.Fragment>
-            <Header/>
-            <Router>
-                <HomeScene default path="/"/>
-                <LoginScene path="login"/>
-                <RegisterScene path="register"/>
-                <TeamDetailScene path='/detail/:teamId'/>
-                <OrderScene path='order'/>
-                <PrivateRoute as={AccountScene} path='account/*'/>
-            </Router>
-            <Footer/>
+            <div className='w-full'>
+                <Header/>
+                <Router>
+                    <HomeScene default path="/"/>
+                    <LoginScene path="login"/>
+                    <RegisterScene path="register"/>
+                    <TeamDetailScene path='/detail/:teamId'/>
+                    <OrderScene path='order'/>
+                    <PrivateRoute as={AccountScene} path='account/*'/>
+                </Router>
+                <Footer/>
+            </div>
         </React.Fragment>
     )
 }
