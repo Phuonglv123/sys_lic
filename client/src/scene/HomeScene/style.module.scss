@@ -1,9 +1,9 @@
 @mixin input {
-  @apply block w-full border-default h-16 p-5;
+  @apply block w-full border-default p-5 focus:border-gray-100 placeholder-gray-400 sm:text-sm sm:leading-5;
 }
 
 @mixin button {
-  @apply h-16 bg-blue-500 border-default text-white font-medium font-sans text-base rounded-md w-full;
+  @apply bg-blue-500 border-default text-white font-medium font-sans text-base rounded-md w-full;
 }
 
 
@@ -13,16 +13,111 @@
   .formCreate {
     @apply bg-white w-10-12 mx-auto p-10;
 
-    .formGroup{
+    .formGroup {
       @apply flex w-full;
 
-      .inputGroup{
+      .inputGroup {
         @apply w-full;
         .input {
           @include input;
+          @apply h-16;
         }
+
         .button {
           @include button;
+          @apply h-16
+        }
+      }
+    }
+  }
+
+  .MainView {
+    @apply bg-white w-10-12 mx-auto p-10;
+    .tableView {
+      @apply shadow-lg overflow-hidden border-b-0 border-gray-200 sm:rounded-md w-full;
+      .table {
+        @apply min-w-full divide-y-0 divide-gray-200;
+        thead {
+          @apply bg-gray-200;
+          tr {
+            th {
+              @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center
+            }
+          }
+        }
+
+        tbody {
+          @apply bg-white divide-y-0 divide-gray-200;
+          tr {
+            td {
+              @apply px-6 py-4 whitespace-nowrap text-center;
+              button {
+                @include button;
+                @apply h-10
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modalView {
+      @apply max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 fixed  right-0 left-0;
+      top: 30%;
+
+      .formModal {
+        @apply px-8 py-6 space-y-6 overflow-hidden bg-white rounded-md shadow-lg duration-300 ease-in-out transform;
+
+        .modalHeader {
+          @apply flex justify-between;
+          .headerTitle {
+            @apply space-y-1;
+            h2 {
+              @apply font-bold text-gray-900;
+            }
+
+            p {
+              @apply text-sm font-medium leading-5 text-gray-500;
+            }
+          }
+
+          .btnClose {
+            button {
+              @apply flex flex-col items-center text-gray-400 hover:text-gray-500 duration-150 ease-in-out
+            }
+          }
+        }
+
+        .modalBody {
+          @apply space-y-6;
+
+          .inputForm {
+            @apply space-y-4;
+
+            .label {
+              @apply block space-y-2;
+
+              span {
+                @apply block text-xs font-bold leading-4 tracking-wide uppercase text-gray-600;
+              }
+
+              input {
+                @include input;
+                @apply h-12;
+              }
+            }
+          }
+        }
+
+        .modalFooter {
+          @apply max-w-md grid grid-flow-row sm:grid-cols-2 gap-3 sm:gap-6 mx-auto;
+          .btnCancel {
+            @apply px-4 py-3 rounded-md border-default border-gray-500 text-gray-600 hover:bg-gray-300 hover:border-gray-300 hover:text-gray-600  duration-300 ease-in-out;
+          }
+
+          .btnSubmit {
+            @apply px-4 py-3 border-indigo-500 border-transparent rounded-md text-white bg-indigo-600 hover:bg-indigo-500 duration-300 ease-in-out
+          }
         }
       }
     }

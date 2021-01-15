@@ -31,19 +31,17 @@ router.get('/my-team/:userId', auth.required, function (req, res, next) {
 })
 
 router.post('/create-team-auth', auth.required, function (req, res, next) {
-    Team.findOne({nameTeam: req.body.team.nameTeam}).then(name => {
+    Team.findOne({id: req.body.id}).then(name => {
         if (name) return res.status(401).json({error: 'Name team is does exits!'});
         User.findById(req.payload.id).then(function (user) {
             if (!user) {
                 return res.sendStatus(401);
             }
             let team = new Team();
-            team.nameTeam = req.body.team.nameTeam;
             team.captain = req.body.team.captain;
             team.phone = req.body.team.phone;
             team.product = req.body.team.product;
             team.amount = req.body.team.amount;
-            team.limit = req.body.team.limit;
 
             return team.save().then(function () {
                 res.json({team: team.toJSONForTeam(user)});

@@ -34,17 +34,15 @@ export interface IMembers {
 
 export interface ITeam {
     id: string;
-    nameTeam: string;
     product: string;
     amount: string;
-    limit: string;
     phone: string;
     captain: string;
     members: IMembers[];
     createdAt: Date;
 }
 
-export interface IOrder{
+export interface IOrder {
     id: string;
     email: string;
     fullName: string;

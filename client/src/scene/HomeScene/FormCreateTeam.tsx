@@ -8,12 +8,10 @@ import style from './style.module.scss'
 export default function FormCreateTeam() {
     const {state: {user}, dispatch} = useAuth();
     const [form, setForm] = useState({
-        nameTeam: '',
         captain: user ? user.id : '',
         phone: user ? user.phone : '',
         product: '',
         amount: '',
-        limit: ''
     });
     const [loading, setLoading] = React.useState(false);
     const [errors, setErrors] = React.useState<IErrors | null>(null);
@@ -28,9 +26,9 @@ export default function FormCreateTeam() {
     const handleSubmit = async (event: React.SyntheticEvent) => {
         event.preventDefault();
         setLoading(true)
-        const {nameTeam, captain, phone, product, amount, limit} = form;
+        const {captain, phone, product, amount} = form;
         try {
-            const res = await createTeam({nameTeam, product, amount, limit, captain, phone});
+            const res = await createTeam({product, amount, captain, phone});
             const id = res.data.team.id
             navigate(`/detail/${id}`)
             console.log(res)

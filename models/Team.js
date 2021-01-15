@@ -42,17 +42,10 @@ const TeamSchema = new mongoose.Schema({
 TeamSchema.methods.toJSONForTeam = function () {
     return {
         id: this.id,
-        nameTeam: this.nameTeam,
         phone: this.phone,
-        members: [{
-            id: this.members._id,
-            email: this.members.email,
-            fullName: this.members.fullName,
-            phone: this.members.phone
-        }],
+        members: this.members,
         product: this.product,
         amount: this.amount,
-        limit: this.limit,
         createdAt: this.createdAt,
         captain: this.captain
     };

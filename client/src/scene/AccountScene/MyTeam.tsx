@@ -42,7 +42,7 @@ export default function MyTeam(_: RouteComponentProps) {
                             <tr>
                                 <th scope="col"
                                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Name team
+                                    Captain
                                 </th>
                                 <th scope="col"
                                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -56,14 +56,6 @@ export default function MyTeam(_: RouteComponentProps) {
                                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Amount
                                 </th>
-                                <th scope="col"
-                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Limit
-                                </th>
-                                <th scope="col"
-                                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Captain
-                                </th>
                             </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
@@ -71,17 +63,15 @@ export default function MyTeam(_: RouteComponentProps) {
                                 return (
                                     <tr key={i}>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            {k.nameTeam}
+                                            {k.captain}
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">{k.product}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{k.members.length}</td>
-
                                         <td className="px-6 py-4 whitespace-nowrap">{k.amount}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap">{k.limit}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap">{k.captain}</td>
                                     </tr>
                                 );
                             })}
+
                             </tbody>
                         </table>
                     </div>

@@ -20,9 +20,9 @@ export function getListTeam() {
 }
 
 export function getTeamDetail(teamId: string) {
-    return API.get<Teams>(`/team/team-detail/${teamId}`)
+    return API.get<Team>(`/team/team-detail/${teamId}`)
 }
 
-export function createTeam(team: { nameTeam: string, captain: string, phone: string, product: string, amount: string, limit: string }) {
+export function createTeam(team: { captain: string, phone: string, product: string, amount: string }) {
     return API.post<Team>('/team/create-team-auth', {team})
 }

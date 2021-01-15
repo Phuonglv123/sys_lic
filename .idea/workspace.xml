@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4c8839d-0cce-408b-93ed-1908d884a9c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-01-08_9_23_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-01-08_9_23_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/api/AuthAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/AuthAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Team.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +124,7 @@
       <workItem from="1610503060320" duration="19957000" />
       <workItem from="1610588715625" duration="8134000" />
       <workItem from="1610598125582" duration="10194000" />
+      <workItem from="1610677987086" duration="17621000" />
     </task>
     <task id="LOCAL-00001" summary="đasa">
       <created>1610013122141</created>
@@ -178,11 +190,5 @@
     </ignored-roots>
     <MESSAGE value="đasa" />
     <option name="LAST_COMMIT_MESSAGE" value="đasa" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="229" y="100" key="SettingsEditor" timestamp="1610636922695">
-      <screen x="60" y="25" width="1380" height="875" />
-    </state>
-    <state x="229" y="100" key="SettingsEditor/60.25.1380.875@60.25.1380.875" timestamp="1610636922695" />
   </component>
 </project>

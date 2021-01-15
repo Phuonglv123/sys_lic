@@ -36,6 +36,7 @@
     "nodemailer": "^6.4.17",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
+    "react-modal": "^3.12.1",
     "request": "2.69.0",
     "slug": "0.9.1",
     "underscore": "1.8.3",

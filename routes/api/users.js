@@ -14,6 +14,16 @@ router.get('/user', auth.required, function (req, res, next) {
     }).catch(next);
 });
 
+router.get('/user/:id', function (req, res, next) {
+    const id = req.params.id
+    User.findById(id).then(function (user) {
+        if (!user) {
+            return res.sendStatus(401);
+        }
+        return res.json({user: user.toProfileJSONFor()})
+    })
+})
+
 router.put('/user', auth.required, function (req, res, next) {
     User.findById(req.payload.id).then(function (user) {
         if (!user) {

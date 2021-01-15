@@ -7,6 +7,10 @@ type User = {
     user: IUser & { token: string };
 };
 
+type Users = {
+    user: IUser
+}
+
 function handleUserResponse({user: {token, ...user}}: User) {
     setLocalStorage(TOKEN_KEY, token);
     setToken(token);
@@ -15,6 +19,10 @@ function handleUserResponse({user: {token, ...user}}: User) {
 
 export function getCurrentUser() {
     return API.get<User>('/auth/user');
+}
+
+export function getProfileCaptain(id: string|undefined) {
+    return API.get<Users>(`/auth/user/${id}`)
 }
 
 export function login(email: string, password: string) {
