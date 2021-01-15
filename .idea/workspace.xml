@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4c8839d-0cce-408b-93ed-1908d884a9c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/craco.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/routes/AppRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/HomeScene.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Team.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -63,8 +55,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="D:\app\sys_lic\client\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -186,5 +178,11 @@
     </ignored-roots>
     <MESSAGE value="đasa" />
     <option name="LAST_COMMIT_MESSAGE" value="đasa" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="229" y="100" key="SettingsEditor" timestamp="1610636922695">
+      <screen x="60" y="25" width="1380" height="875" />
+    </state>
+    <state x="229" y="100" key="SettingsEditor/60.25.1380.875@60.25.1380.875" timestamp="1610636922695" />
   </component>
 </project>

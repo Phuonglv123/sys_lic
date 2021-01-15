@@ -46,43 +46,32 @@ export default function FormCreateTeam() {
     return (
         <div className={style.formCreate}>
             {/*{errors && <ListErrors errors={errors}/>}*/}
-            <form className='flex' onSubmit={handleSubmit}>
-                <div>
-                    <input id="name-team" name="nameTeam" type="text" required value={form.nameTeam}
-                           onChange={handleChange}
-                           className={style.input} placeholder="Name Team"/>
-                </div>
-                <div>
+            <form className={style.formGroup} onSubmit={handleSubmit}>
+                <div className={style.inputGroup}>
                     <input id="captain" name="captain" type="text" required value={user ? user.email : form.captain}
                            onChange={handleChange}
                            className={style.input}
                            placeholder="Email"/>
                 </div>
-                <div>
+                <div className={style.inputGroup}>
                     <input id="phone" name="phone" type="text" required value={user ? user.phone : form.phone}
                            onChange={handleChange}
                            className={style.input}
                            placeholder="Phone"/>
                 </div>
-                <div>
+                <div className={style.inputGroup}>
                     <input id="product" name="product" type="text" required value={form.product}
                            onChange={handleChange}
                            className={style.input}
                            placeholder="product"/>
                 </div>
-                <div>
+                <div className={style.inputGroup}>
                     <input id="amount" name="amount" type="text" required value={form.amount}
                            onChange={handleChange}
                            className={style.input}
                            placeholder="amount"/>
                 </div>
-                <div>
-                    <input id="limit" name="limit" type="text" required value={form.limit}
-                           onChange={handleChange}
-                           className={style.input}
-                           placeholder="limit"/>
-                </div>
-                <div>
+                <div className={style.inputGroup}>
                     <button
                         type='submit'
                         disabled={loading}

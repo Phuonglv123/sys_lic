@@ -3,22 +3,28 @@
 }
 
 @mixin button {
-  @apply h-16 bg-blue-500 border-default text-white font-medium font-sans text-base rounded-md
+  @apply h-16 bg-blue-500 border-default text-white font-medium font-sans text-base rounded-md w-full;
 }
+
 
 .homeScene {
   @apply max-w-full mx-auto;
 
   .formCreate {
-    @apply bg-white w-11-12 mx-auto p-10;
+    @apply bg-white w-10-12 mx-auto p-10;
 
-    .input {
-      @include input
-    }
+    .formGroup{
+      @apply flex w-full;
 
-    .button {
-      @include button;
-      width: 10em;
+      .inputGroup{
+        @apply w-full;
+        .input {
+          @include input;
+        }
+        .button {
+          @include button;
+        }
+      }
     }
   }
 }
