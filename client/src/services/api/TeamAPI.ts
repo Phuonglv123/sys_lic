@@ -1,5 +1,5 @@
 import API from "./APIUtils";
-import {ITeam, IMembers} from "../../types";
+import {ITeam, IMembers, IUser} from "../../types";
 
 type Teams = {
     teams: Array<ITeam>
@@ -8,6 +8,7 @@ type Teams = {
 
 type Team = {
     team: ITeam
+    user: IUser
 }
 
 
@@ -23,6 +24,6 @@ export function getTeamDetail(teamId: string) {
     return API.get<Team>(`/team/team-detail/${teamId}`)
 }
 
-export function createTeam(team: { captain: string, phone: string, product: string, amount: string }) {
-    return API.post<Team>('/team/create-team-auth', {team})
+export function createTeam(team: { email: string, phone: string, product: string, amount: string }) {
+    return API.post<Team>('/team/create-team', {team})
 }

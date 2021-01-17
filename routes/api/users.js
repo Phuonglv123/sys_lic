@@ -85,7 +85,6 @@ router.post('/register', function (req, res, next) {
     user.setPassword(req.body.user.password);
 
     user.save().then(function () {
-        console.log(user)
         return res.json({user: user.toAuthJSON()});
     }).catch(next);
 });

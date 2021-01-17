@@ -30,26 +30,68 @@ router.get('/my-team/:userId', auth.required, function (req, res, next) {
     })
 })
 
-router.post('/create-team-auth', auth.required, function (req, res, next) {
-    Team.findOne({id: req.body.id}).then(name => {
-        if (name) return res.status(401).json({error: 'Name team is does exits!'});
-        User.findById(req.payload.id).then(function (user) {
-            if (!user) {
-                return res.sendStatus(401);
-            }
-            let team = new Team();
-            team.captain = req.body.team.captain;
-            team.phone = req.body.team.phone;
-            team.product = req.body.team.product;
-            team.amount = req.body.team.amount;
+const createTeam = function(res, users, next){
+    const team = new Team();
+    team.email = req.body.team.email;
+    team.product = req.body.team.product;
+    team.phone = req.body.team.phone;
+    team.amount = req.body.team.amount;
+    return team.save().then(function () {
+        res.json({team: team.toJSONForTeam(), user: users.toAuthJSON()});
+    }).catch(next)
+}
+router.post('/create-team', function (req, res, next) {
+    User.findOne({email: req.body.team.email})
+        .then(function (user) {
+            if (user) {
 
-            return team.save().then(function () {
-                res.json({team: team.toJSONForTeam(user)});
-            })
-        }).catch(next)
-    }).catch(e => {
-        return res.status(500).json({error: 'server not found'})
-    })
+            } else {
+                const users = new User();
+                const randomPassword = Math.floor(Math.random() * 10000000);
+                const text = 'asd'
+                users.email = req.body.team.email;
+                users.fullName = req.body.team.fullName;
+                users.phone = req.body.team.phone;
+                users.setPassword(randomPassword + text);
+                users.save().then(function () {
+                    const transporter = nodemailer.createTransport({
+                        service: 'gmail',
+                        auth: {
+                            user: 'phuonglv@dev.pupam.com',
+                            pass: 'espbhbsnybgejbjk'
+                        }
+                    });
+                    const mailOptions = {
+                        from: 'phuonglv@dev.pupam.com',
+                        to: req.body.team.email,
+                        subject: 'Create account for lic tranding',
+                        text: `your password is ${randomPassword + text}`
+                    };
+                    transporter.sendMail(mailOptions, function (error, info) {
+                        if (error) {
+                            console.log(error);
+                        } else {
+                            console.log('Email sent: ' + info.response);
+                        }
+                    });
+                }).catch(next);
+                const team = new Team();
+                team.email = req.body.team.email;
+                team.product = req.body.team.product;
+                team.phone = req.body.team.phone;
+                team.amount = req.body.team.amount;
+                return team.save().then(function () {
+                    res.json({team: team.toJSONForTeam(), user: users.toAuthJSON()});
+                }).catch(next)
+            }
+        })
+        .catch(e => {
+            console.log(e)
+        })
+})
+
+router.post('/create-team-auth', auth.required, function (req, res, next) {
+
 })
 
 router.get('/team-detail/:teamId', function (req, res, next) {

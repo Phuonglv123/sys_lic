@@ -67,8 +67,7 @@ export default function TeamDetailScene(_: RouteComponentProps) {
                                 </div>
                                 <div className="ml-12 flex justify-between items-center">
                                     <span>Email:</span>
-                                    {getProfile(data.captain)}
-                                    <span></span>
+                                    <span>{data.email}</span>
                                 </div>
                                 <div className="ml-12 flex justify-between items-center">
                                     <span>Product:</span>

@@ -63,7 +63,7 @@ export default function MyTeam(_: RouteComponentProps) {
                                 return (
                                     <tr key={i}>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            {k.captain}
+                                            {k.email}
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap">{k.product}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{k.members.length}</td>

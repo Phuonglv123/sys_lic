@@ -37,7 +37,7 @@ export interface ITeam {
     product: string;
     amount: string;
     phone: string;
-    captain: string;
+    email: string;
     members: IMembers[];
     createdAt: Date;
 }

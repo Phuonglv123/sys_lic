@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const TeamSchema = new mongoose.Schema({
-    captain: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    email: {
+        type: String,
+        require: true
+    },
     phone: {
         type: String,
         require: true
@@ -47,7 +50,7 @@ TeamSchema.methods.toJSONForTeam = function () {
         product: this.product,
         amount: this.amount,
         createdAt: this.createdAt,
-        captain: this.captain
+        email: this.email
     };
 };
 

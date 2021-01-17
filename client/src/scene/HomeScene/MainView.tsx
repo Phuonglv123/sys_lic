@@ -80,7 +80,7 @@ export default function MainView() {
                             <tr key={i}>
                                 <td>
                                     <Link to={`/detail/${k.id}`}>
-                                        {k.captain}
+                                        {k.email}
                                     </Link>
                                 </td>
                                 <td>{k.product}</td>

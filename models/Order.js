@@ -5,6 +5,7 @@ const OrderSchema = new mongoose.Schema({
     fullName: String,
     phone: String,
     amount: String,
+    renew: String,
     isPaid: {
         type: Boolean,
         default: false

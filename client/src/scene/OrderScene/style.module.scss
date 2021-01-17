@@ -1,0 +1,89 @@
+.OrderScene {
+    @apply w-11-12 mx-auto h-screen pt-20;
+    .titleOrderScene {
+        text-align: center;
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .row {
+        @apply grid lg:grid-cols-3 gap-16 p-10 md:grid-cols-2;
+        .col1 {
+            @apply lg:col-span-1 h-56  rounded-md;
+            .span1 {
+                @apply shadow-lg p-8;
+                .chooseOrder {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-top: 15px;
+
+                    .radioBtn {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        input {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .span2 {
+                margin-top: 10px;
+                @apply shadow-lg p-8 w-full;
+                .PromotionCode {
+                    @apply flex justify-start items-center flex-wrap;
+                    input {
+                        @apply flex;
+                    }
+                }
+            }
+
+            .span3 {
+                margin-top: 10px;
+                @apply shadow-lg p-8;
+
+                .InformationPayment {
+                    div {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-top: 6px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .col2 {
+            @apply lg:col-span-2 md:col-span-1;
+            .tabCustom {
+                @apply flex flex-wrap;
+                .tab {
+                    @apply flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row;
+                    .tabItem {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 10px;
+                        text-align: center;
+
+                        .tabLink {
+                            @apply shadow-lg h-24 w-24 p-4 content-center flex items-center justify-center;
+                            border-radius: 12px;
+                            cursor: pointer;
+                            img{
+                                width: 100%;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

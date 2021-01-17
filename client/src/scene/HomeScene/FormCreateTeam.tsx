@@ -4,11 +4,12 @@ import {IErrors} from "../../types";
 import {createTeam} from "../../services/api/TeamAPI";
 import {navigate} from "@reach/router";
 import style from './style.module.scss'
+import {dataURLToBlob} from "cypress/types/blob-util";
 
 export default function FormCreateTeam() {
     const {state: {user}, dispatch} = useAuth();
     const [form, setForm] = useState({
-        captain: user ? user.id : '',
+        email: user ? user.email : '',
         phone: user ? user.phone : '',
         product: '',
         amount: '',
@@ -26,18 +27,28 @@ export default function FormCreateTeam() {
     const handleSubmit = async (event: React.SyntheticEvent) => {
         event.preventDefault();
         setLoading(true)
-        const {captain, phone, product, amount} = form;
+        let ignore = false;
+        const {email, phone, product, amount} = form;
         try {
-            const res = await createTeam({product, amount, captain, phone});
-            const id = res.data.team.id
-            navigate(`/detail/${id}`)
-            console.log(res)
+            const res = await createTeam({product, amount, email, phone});
+            if (!ignore) {
+                const user = res.data.user;
+                dispatch({type: "LOAD_USER", user})
+                const id = res.data.team.id
+                navigate(`/detail/${id}`)
+                console.log(res)
+            }
+
         } catch (error) {
             setLoading(false)
             if (error.status === 422) {
                 setErrors(error.data.errors)
             }
         }
+
+        return () => {
+            ignore = true
+        };
     }
 
 
@@ -46,7 +57,7 @@ export default function FormCreateTeam() {
             {/*{errors && <ListErrors errors={errors}/>}*/}
             <form className={style.formGroup} onSubmit={handleSubmit}>
                 <div className={style.inputGroup}>
-                    <input id="captain" name="captain" type="text" required value={user ? user.email : form.captain}
+                    <input id="email" name="email" type="text" required value={user ? user.email : form.email}
                            onChange={handleChange}
                            className={style.input}
                            placeholder="Email"/>

@@ -2,24 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4c8839d-0cce-408b-93ed-1908d884a9c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-01-08_9_23_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-01-08_9_23_AM__Default_Changelist_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/img-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/logopupamwhite.c13a8c2d165a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/logozlp1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/momo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/pupam_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/res/img/qr-scan-zlp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scene/OrderScene/style.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/types/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021-01-15_8_46_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/AccountScene/MyTeam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/FormCreateTeam.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/MainView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/OrderScene/OrderScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/OrderScene/OrderScene.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/TeamDetailScene.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/api/AuthAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/AuthAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/scene/TeamDetailScene/style.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api/TeamAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Team.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/team.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/team.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +40,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/scene/HomeScene/style.module.scss" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1mgt8vpakP09QTmTb1A33pdzXfN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -54,9 +67,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.19.12" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.21" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -72,11 +85,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src" />
       <recent name="D:\app\sys_lic" />
       <recent name="D:\app\sys_lic\client\src\components\common" />
       <recent name="D:\app\sys_lic\client\src\services\api" />
       <recent name="D:\app\sys_lic\client\src\context" />
-      <recent name="D:\app\sys_lic\client\src\reducers" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -124,7 +137,7 @@
       <workItem from="1610503060320" duration="19957000" />
       <workItem from="1610588715625" duration="8134000" />
       <workItem from="1610598125582" duration="10194000" />
-      <workItem from="1610677987086" duration="17621000" />
+      <workItem from="1610842608122" duration="12967000" />
     </task>
     <task id="LOCAL-00001" summary="đasa">
       <created>1610013122141</created>
@@ -190,5 +203,35 @@
     </ignored-roots>
     <MESSAGE value="đasa" />
     <option name="LAST_COMMIT_MESSAGE" value="đasa" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="354" y="146" key="#Inspections" timestamp="1610845137701">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="354" y="146" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1610845137701" />
+    <state x="481" y="164" key="#SCSS" timestamp="1610844643269">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="481" y="164" key="#SCSS/0.0.1440.900@0.0.1440.900" timestamp="1610844643269" />
+    <state width="1419" height="236" key="GridCell.Tab.0.bottom" timestamp="1610776059863">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="236" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1610776059863" />
+    <state width="1419" height="236" key="GridCell.Tab.0.center" timestamp="1610776059862">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="236" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1610776059862" />
+    <state width="1419" height="236" key="GridCell.Tab.0.left" timestamp="1610776059858">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="236" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1610776059858" />
+    <state width="1419" height="236" key="GridCell.Tab.0.right" timestamp="1610776059863">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="236" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1610776059863" />
+    <state x="229" y="100" key="SettingsEditor" timestamp="1610636922695">
+      <screen x="60" y="25" width="1380" height="875" />
+    </state>
+    <state x="229" y="100" key="SettingsEditor/60.25.1380.875@60.25.1380.875" timestamp="1610636922695" />
   </component>
 </project>
