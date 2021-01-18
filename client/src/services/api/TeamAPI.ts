@@ -24,6 +24,10 @@ export function getTeamDetail(teamId: string) {
     return API.get<Team>(`/team/team-detail/${teamId}`)
 }
 
-export function createTeam(team: { email: string, phone: string, product: string, amount: string }) {
+export function createTeam(team: { email: string, phone: string, product: string, amount: number }) {
     return API.post<Team>('/team/create-team', {team})
+}
+
+export function createTeamAuth(team:{ email: string, phone: string, product: string, amount: number}) {
+    return API.post<Team>('/team/create-team-auth', {team})
 }

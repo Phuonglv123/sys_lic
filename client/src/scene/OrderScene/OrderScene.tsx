@@ -2,13 +2,24 @@ import React from "react";
 import {RouteComponentProps} from "@reach/router";
 import style from "./style.module.scss";
 import utils from "../../types/utils";
+import moment from "moment";
 
 import momoImg from '../../res/img/momo.png';
 import zaloImg from '../../res/img/logozlp1.png';
 import zlQr from '../../res/img/qr-scan-zlp.png'
+import useAuth from "../../context/auth";
 
 export default function OrderScene(_: RouteComponentProps) {
     const [openTab, setOpenTab] = React.useState(1);
+    const {state: {orders}} = useAuth();
+    const [renew, setRenew] = React.useState(1);
+
+    const handleChange = (event: any) => {
+        setRenew(event.target.value)
+        console.log(renew)
+
+    }
+
     return (
         <div className={style.OrderScene}>
             <div className={style.titleOrderScene}>
@@ -22,38 +33,32 @@ export default function OrderScene(_: RouteComponentProps) {
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="oneMonth" type="radio" name="radio" className="hidden"/>
-                                <label htmlFor="oneMonth" className="flex items-center cursor-pointer">
-                                    <span className="w-4 h-4 inline-block mr-1 rounded-full border border-grey"/>
-                                    1 Month
-                                </label>
+                                <input id="oneMonth" type="radio" name="renew" checked={renew === 1} value={1}
+                                       onChange={handleChange}/>
+                                <span>1 month</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(10000)}</span>
+                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount)}</span>
                             </div>
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="twoMonth" type="radio" name="radio" className="hidden"/>
-                                <label htmlFor="twoMonth" className="flex items-center cursor-pointer">
-                                    <span className="w-4 h-4 inline-block mr-1 rounded-full border border-grey"/>
-                                    2 Months
-                                </label>
+                                <input id="twoMonth" type="radio" name="renew" value={2} checked={renew === 2}
+                                       onChange={handleChange}/>
+                                <span>2 months</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(10000)}</span>
+                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount * 2)}</span>
                             </div>
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="threeMonth" type="radio" name="radio" className="hidden"/>
-                                <label htmlFor="fourMonth" className="flex items-center cursor-pointer">
-                                    <span className="w-4 h-4 inline-block mr-1 rounded-full border border-grey"/>
-                                    3 Months
-                                </label>
+                                <input id="threeMonth" type="radio" name="renew" value={3} checked={renew === 3}
+                                       onChange={handleChange}/>
+                                <span>3 months</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(10000)}</span>
+                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount * 3)}</span>
                             </div>
                         </div>
                     </div>
@@ -73,15 +78,15 @@ export default function OrderScene(_: RouteComponentProps) {
                         <div className={style.InformationPayment}>
                             <div>
                                 <span>Email:</span>
-                                <span></span>
+                                <span>{orders?.email}</span>
                             </div>
                             <div>
                                 <span>Unit Price</span>
-                                <span>{utils.formatCurrencyVND(10000)}</span>
+                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount)}</span>
                             </div>
                             <div>
                                 <span>Date Renew</span>
-                                <span>12/12/2022</span>
+                                {/*<span>{utils.formatDateTime(orders.)}</span>*/}
                             </div>
                             <hr/>
                             <div>

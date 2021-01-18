@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import useAuth from "../../context/auth";
 import {IErrors} from "../../types";
-import {createTeam} from "../../services/api/TeamAPI";
+import {createTeam, createTeamAuth} from "../../services/api/TeamAPI";
 import {navigate} from "@reach/router";
 import style from './style.module.scss'
-import {dataURLToBlob} from "cypress/types/blob-util";
 
 export default function FormCreateTeam() {
     const {state: {user}, dispatch} = useAuth();
@@ -12,7 +11,7 @@ export default function FormCreateTeam() {
         email: user ? user.email : '',
         phone: user ? user.phone : '',
         product: '',
-        amount: '',
+        amount: 0,
     });
     const [loading, setLoading] = React.useState(false);
     const [errors, setErrors] = React.useState<IErrors | null>(null);
@@ -51,11 +50,34 @@ export default function FormCreateTeam() {
         };
     }
 
+    const handleSubmitAuth = async (event: React.SyntheticEvent) => {
+        event.preventDefault();
+        setLoading(true)
+        let ignore = false;
+        const {email, phone, product, amount} = form;
+        try {
+            const res = await createTeamAuth({product, amount, email, phone})
+            if (!ignore) {
+                const id = res.data.team.id
+                navigate(`/detail/${id}`)
+            }
+        } catch (error) {
+            setLoading(false)
+            if (error.status === 422) {
+                setErrors(error.data.errors)
+            }
+        }
+
+        return () => {
+            ignore = true
+        };
+    }
+
 
     return (
         <div className={style.formCreate}>
             {/*{errors && <ListErrors errors={errors}/>}*/}
-            <form className={style.formGroup} onSubmit={handleSubmit}>
+            <form className={style.formGroup} onSubmit={user ? handleSubmitAuth : handleSubmit}>
                 <div className={style.inputGroup}>
                     <input id="email" name="email" type="text" required value={user ? user.email : form.email}
                            onChange={handleChange}

@@ -4,7 +4,7 @@ const OrderSchema = new mongoose.Schema({
     email: String,
     fullName: String,
     phone: String,
-    amount: String,
+    amount: Number,
     renew: String,
     isPaid: {
         type: Boolean,

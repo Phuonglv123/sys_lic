@@ -35,7 +35,7 @@ export interface IMembers {
 export interface ITeam {
     id: string;
     product: string;
-    amount: string;
+    amount: number;
     phone: string;
     email: string;
     members: IMembers[];
@@ -47,8 +47,9 @@ export interface IOrder {
     email: string;
     fullName: string;
     phone: string;
-    amount: string;
+    amount: number;
     teamId: string;
+    renew: Date;
 }
 
 export interface IUser {

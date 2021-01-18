@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from "react";
 import {getListTeam} from "../../services/api/TeamAPI";
-import useTeam from "../../context/team";
 import {Link, navigate} from '@reach/router';
-import {createOrder} from "../../services/api/OrderAPI";
+import {createOrder, createOrderAuth} from "../../services/api/OrderAPI";
 import style from './style.module.scss';
+import useAuth from "../../context/auth";
+import {setLocalStorage} from "../../utils";
+import {TOKEN_KEY} from "../../services/api/APIUtils";
+import utils from "../../types/utils";
 
 
 export default function MainView() {
-    const {state: {teams}, dispatch} = useTeam();
+    const {state: {teams, user}, dispatch} = useAuth();
     const [showModal, setShowModal] = React.useState(false);
     const [loading, setLoading] = useState(false)
     const [form, setForm] = useState({email: '', fullName: '', phone: ''})
-    const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState(0);
     const [teamId, setTeamId] = useState('')
 
     useEffect(() => {
@@ -48,17 +51,44 @@ export default function MainView() {
     const handleSubmit = async (event: React.SyntheticEvent) => {
         event.preventDefault();
         setLoading(true);
+        let ignore = false;
         const {email, fullName, phone} = form;
         try {
             const res = await createOrder({email, fullName, phone, amount, teamId})
-            if (res.data) {
-                dispatch({type: "CREATE_ORDER", payload: {orders: res.data}})
+            if (!ignore) {
+                const user = res.data.user;
+                dispatch({type: "CREATE_ORDER", payload: {orders: res.data.orders}});
+                dispatch({type: "LOAD_USER", user})
+                setLocalStorage(TOKEN_KEY, user.token)
                 navigate('/order')
             }
 
         } catch (e) {
             console.log(e)
         }
+        return () => {
+            ignore = true
+        };
+    }
+
+    const handleSubmitAuth = async (event: React.SyntheticEvent) => {
+        event.preventDefault();
+        setLoading(true);
+        let ignore = false;
+        const {email, fullName, phone} = form;
+        try {
+            const res = await createOrderAuth({email, fullName, phone, amount, teamId})
+            if (!ignore) {
+                dispatch({type: "CREATE_ORDER", payload: {orders: res.data.orders}})
+                navigate('/order')
+            }
+
+        } catch (e) {
+            console.log(e)
+        }
+        return () => {
+            ignore = true
+        };
     }
 
     return (
@@ -85,7 +115,7 @@ export default function MainView() {
                                 </td>
                                 <td>{k.product}</td>
                                 <td>{k.members?.length}</td>
-                                <td>{k.amount}</td>
+                                <td>{utils.formatCurrencyVND(k.amount)}</td>
                                 <td>
                                     <button type="button" style={{transition: "all .15s ease"}}
                                             onClick={() => {
@@ -103,7 +133,7 @@ export default function MainView() {
                 </table>
             </div>
             {showModal ? <div className={style.modalView}>
-                <form className={style.formModal} onSubmit={handleSubmit}>
+                <form className={style.formModal} onSubmit={user ? handleSubmitAuth : handleSubmit}>
                     <div className={style.modalHeader}>
                         <div className={style.headerTitle}>
                             <h2>Add a New Flow</h2>
