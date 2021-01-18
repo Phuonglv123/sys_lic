@@ -3,6 +3,7 @@ import {RouteComponentProps} from "@reach/router";
 import style from "./style.module.scss";
 import utils from "../../types/utils";
 import moment from "moment";
+import { useForm } from "react-hook-form";
 
 import momoImg from '../../res/img/momo.png';
 import zaloImg from '../../res/img/logozlp1.png';
@@ -12,13 +13,8 @@ import useAuth from "../../context/auth";
 export default function OrderScene(_: RouteComponentProps) {
     const [openTab, setOpenTab] = React.useState(1);
     const {state: {orders}} = useAuth();
-    const [renew, setRenew] = React.useState(1);
-
-    const handleChange = (event: any) => {
-        setRenew(event.target.value)
-        console.log(renew)
-
-    }
+    const { register, watch } = useForm();
+    const renewDate = watch('renew');
 
     return (
         <div className={style.OrderScene}>
@@ -33,8 +29,7 @@ export default function OrderScene(_: RouteComponentProps) {
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="oneMonth" type="radio" name="renew" checked={renew === 1} value={1}
-                                       onChange={handleChange}/>
+                                <input id="oneMonth" type="radio" name="renew" ref={register} value={1} defaultChecked={true}/>
                                 <span>1 month</span>
                             </div>
                             <div>
@@ -43,8 +38,7 @@ export default function OrderScene(_: RouteComponentProps) {
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="twoMonth" type="radio" name="renew" value={2} checked={renew === 2}
-                                       onChange={handleChange}/>
+                                <input id="twoMonth" type="radio" name="renew" ref={register} value={2}/>
                                 <span>2 months</span>
                             </div>
                             <div>
@@ -53,8 +47,7 @@ export default function OrderScene(_: RouteComponentProps) {
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="threeMonth" type="radio" name="renew" value={3} checked={renew === 3}
-                                       onChange={handleChange}/>
+                                <input id="threeMonth" type="radio" name="renew" value={3} ref={register}/>
                                 <span>3 months</span>
                             </div>
                             <div>
@@ -91,7 +84,7 @@ export default function OrderScene(_: RouteComponentProps) {
                             <hr/>
                             <div>
                                 <span>Total</span>
-                                <span>{utils.formatCurrencyVND(10000)}</span>
+                                <span>{utils.formatCurrencyVND(orders && orders.amount * renewDate)}</span>
                             </div>
                         </div>
                     </div>

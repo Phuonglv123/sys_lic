@@ -19,7 +19,9 @@ class Utils {
     }
 
     dayPlusDay(date: Date, days: number) {
-        return new Date(date.setMonth(date.getMonth() + days))
+        let result = new Date();
+        result.setDate(date.getDate() + days);
+        return result;
     }
 
 }
