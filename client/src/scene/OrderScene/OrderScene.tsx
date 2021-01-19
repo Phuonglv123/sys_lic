@@ -2,19 +2,51 @@ import React from "react";
 import {RouteComponentProps} from "@reach/router";
 import style from "./style.module.scss";
 import utils from "../../types/utils";
-import moment from "moment";
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
+import {useParams} from "@reach/router"
 
 import momoImg from '../../res/img/momo.png';
 import zaloImg from '../../res/img/logozlp1.png';
 import zlQr from '../../res/img/qr-scan-zlp.png'
 import useAuth from "../../context/auth";
+import {joinTeam} from "../../services/api/TeamAPI";
+import {getOrderItem} from "../../services/api/OrderAPI";
 
 export default function OrderScene(_: RouteComponentProps) {
     const [openTab, setOpenTab] = React.useState(1);
     const {state: {orders}} = useAuth();
-    const { register, watch } = useForm();
+    const {register, watch} = useForm();
     const renewDate = watch('renew');
+    const params = useParams();
+    const [order, setOrder] = React.useState({amount: 0, email: ''});
+
+    React.useEffect(() => {
+        let ignore = false;
+
+        async function fetchOrder() {
+            try {
+                const res = await getOrderItem(params.id);
+                if (!ignore) {
+                    setOrder(res.data.orders)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchOrder();
+        return () => {
+            ignore = true;
+        };
+    }, [])
+
+    const payment = async () => {
+        // // const id = orders?._id;
+        // // const res = await updateOrder(id)
+        // // console.log(res)
+        // const res = await joinTeam({email, phone: 'sadsad', fullName: 'dasdas'}, orders?.teamId)
+        // console.log(res)
+    }
 
     return (
         <div className={style.OrderScene}>
@@ -29,11 +61,12 @@ export default function OrderScene(_: RouteComponentProps) {
                         </div>
                         <div className={style.chooseOrder}>
                             <div className={style.radioBtn}>
-                                <input id="oneMonth" type="radio" name="renew" ref={register} value={1} defaultChecked={true}/>
+                                <input id="oneMonth" type="radio" name="renew" ref={register} value={1}
+                                       defaultChecked={true}/>
                                 <span>1 month</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount)}</span>
+                                <span>{utils.formatCurrencyVND(order.amount)}</span>
                             </div>
                         </div>
                         <div className={style.chooseOrder}>
@@ -42,7 +75,7 @@ export default function OrderScene(_: RouteComponentProps) {
                                 <span>2 months</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount * 2)}</span>
+                                <span>{utils.formatCurrencyVND(order.amount * 2)}</span>
                             </div>
                         </div>
                         <div className={style.chooseOrder}>
@@ -51,7 +84,7 @@ export default function OrderScene(_: RouteComponentProps) {
                                 <span>3 months</span>
                             </div>
                             <div>
-                                <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount * 3)}</span>
+                                <span>{utils.formatCurrencyVND(order.amount * 3)}</span>
                             </div>
                         </div>
                     </div>
@@ -78,13 +111,13 @@ export default function OrderScene(_: RouteComponentProps) {
                                 <span>{utils.formatCurrencyVND(orders === null ? 0 : orders.amount)}</span>
                             </div>
                             <div>
-                                <span>Date Renew</span>
-                                {/*<span>{utils.formatDateTime(orders.)}</span>*/}
+                                <span>Start Date</span>
+                                <span>{utils.formatDateTime(orders?.createdAt)}</span>
                             </div>
                             <hr/>
                             <div>
                                 <span>Total</span>
-                                <span>{utils.formatCurrencyVND(orders && orders.amount * renewDate)}</span>
+                                <span>{utils.formatCurrencyVND(order.amount * renewDate)}</span>
                             </div>
                         </div>
                     </div>
@@ -143,7 +176,12 @@ export default function OrderScene(_: RouteComponentProps) {
                                                     </ul>
                                                 </div>
                                             </div>
-
+                                            <div>
+                                                <button onClick={() => {
+                                                    payment()
+                                                }}>thanh toan
+                                                </button>
+                                            </div>
                                         </div>
                                         <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                                             <p>

@@ -11,7 +11,6 @@ import TeamDetailScene from "../../scene/TeamDetailScene/TeamDetailScene";
 import AccountScene from "../../scene/AccountScene/AccountScene";
 import PrivateRoute from "./PrivateRoute";
 import OrderScene from "../../scene/OrderScene/OrderScene";
-import {getOrderItem} from "../../services/api/OrderAPI";
 
 function AppRoute() {
     const {state: {user, isAuthenticated}, dispatch,} = useAuth();
@@ -30,22 +29,8 @@ function AppRoute() {
             }
         }
 
-        async function fetchOrder() {
-            try {
-                const res = await getOrderItem()
-                const orders = res.data.orders
-                if (!ignore) {
-                    dispatch({type: "LOAD_ORDER", orders})
-                }
-            } catch (e) {
-                console.log(e)
-
-            }
-        }
-
         if (!user && isAuthenticated) {
             fetchUser();
-            fetchOrder();
         }
 
         return () => {
@@ -65,7 +50,7 @@ function AppRoute() {
                     <LoginScene path="login"/>
                     <RegisterScene path="register"/>
                     <TeamDetailScene path='/detail/:teamId'/>
-                    <OrderScene path='order'/>
+                    <OrderScene path='order/:id'/>
                     <PrivateRoute as={AccountScene} path='account/*'/>
                 </Router>
                 <Footer/>

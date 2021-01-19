@@ -28,6 +28,10 @@ export function createTeam(team: { email: string, phone: string, product: string
     return API.post<Team>('/team/create-team', {team})
 }
 
-export function createTeamAuth(team:{ email: string, phone: string, product: string, amount: number}) {
+export function createTeamAuth(team: { email: string, phone: string, product: string, amount: number }) {
     return API.post<Team>('/team/create-team-auth', {team})
+}
+
+export function joinTeam(team: { email: string, fullName: string, phone: string }, teamId: string | undefined) {
+    return API.post<Team>(`/team/join-team/${teamId}`)
 }

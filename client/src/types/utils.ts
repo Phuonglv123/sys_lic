@@ -1,5 +1,5 @@
 import moment from "moment";
-
+moment.locale('vi');
 
 class Utils {
     formatCurrencyVND(value: number | string | null) {
@@ -10,7 +10,7 @@ class Utils {
         }
     }
 
-    formatDateTime(value: string | null) {
+    formatDateTime(value: any) {
         if (value === null) {
             return 'null'
         } else {

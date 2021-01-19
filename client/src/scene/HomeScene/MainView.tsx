@@ -13,7 +13,11 @@ export default function MainView() {
     const {state: {teams, user}, dispatch} = useAuth();
     const [showModal, setShowModal] = React.useState(false);
     const [loading, setLoading] = useState(false)
-    const [form, setForm] = useState({email: '', fullName: '', phone: ''})
+    const [form, setForm] = useState({
+        email: user ? user.email : '',
+        fullName: user ? user.fullName : '',
+        phone: user ? user.phone : ''
+    })
     const [amount, setAmount] = useState(0);
     const [teamId, setTeamId] = useState('')
 
@@ -60,7 +64,7 @@ export default function MainView() {
                 dispatch({type: "CREATE_ORDER", payload: {orders: res.data.orders}});
                 dispatch({type: "LOAD_USER", user})
                 setLocalStorage(TOKEN_KEY, user.token)
-                navigate('/order')
+                navigate(`/order/${res.data.orders._id}`)
             }
 
         } catch (e) {
@@ -80,7 +84,7 @@ export default function MainView() {
             const res = await createOrderAuth({email, fullName, phone, amount, teamId})
             if (!ignore) {
                 dispatch({type: "CREATE_ORDER", payload: {orders: res.data.orders}})
-                navigate('/order')
+                navigate(`/order/${res.data.orders._id}`)
             }
 
         } catch (e) {

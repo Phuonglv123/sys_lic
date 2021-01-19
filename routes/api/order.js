@@ -53,16 +53,16 @@ router.post('/create-order', function (req, res, next) {
     })
 })
 
-router.post('/create-order-auth', auth.required, function (res, req, next) {
-    User.findOne({email: req.body.order.email}).then(function (user) {
-        if (!user) return res.status(400).json({message: 'Account is not found'});
+router.post('/create-order-auth', auth.required, function (req, res, next) {
+    Team.findOne({email: req.body.email}).then(function (email) {
+        if (!email) return res.status(400).json({message: 'Email is exits '});
         const order = new Order();
-        order.email = req.body.order.email;
-        order.fullName = req.body.order.fullName;
-        order.phone = req.body.order.phone;
-        order.amount = req.body.order.amount;
-        order.renew = req.body.order.renew;
-        order.teamId = req.body.order.teamId;
+        order.email = req.body.email;
+        order.fullName = req.body.fullName;
+        order.phone = req.body.phone;
+        order.amount = req.body.amount;
+        order.renew = req.body.renew;
+        order.teamId = req.body.teamId;
         order.save().then(function () {
             res.json({orders: order});
         }).catch(next)
@@ -82,18 +82,27 @@ router.get('/my-order', auth.required, function (req, res, next) {
     })
 })
 
+router.get('/:id', function (req, res, next) {
+    const id = req.params.id
+    Order.findById(id).then(order => {
+        if (!order) return res.status(400).json({message: 'email is not found'});
+        return order.save().then(function () {
+            res.json({orders: order});
+        }).catch(next)
+    }).catch(e => {
+        console.log(e)
+    })
+})
+
 router.post('/update-order/:id', (req, res) => {
     Order.findOne({_id: req.params.id})
         .then(orders => {
             if (!orders) {
                 return res.status(400).json({error: "company exists"});
             } else {
-                orders.isPaid = req.body.isPaid;
-
+                orders.isPaid = true;
                 return orders.save()
-                    .then(order => res.status(200).json({
-                        'data': order
-                    }))
+                    .then(order => res.json({orders: order}))
                     .catch((e) => {
                         return res.status(500).json(e)
                     })

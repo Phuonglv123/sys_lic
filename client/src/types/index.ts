@@ -43,13 +43,15 @@ export interface ITeam {
 }
 
 export interface IOrder {
-    id: string;
+    _id: string;
     email: string;
     fullName: string;
     phone: string;
     amount: number;
-    teamId: string;
+    teamId: string
+    isPaid: boolean;
     renew: Date;
+    createdAt: Date;
 }
 
 export interface IUser {

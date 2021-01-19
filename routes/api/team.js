@@ -104,8 +104,9 @@ router.get('/team-detail/:teamId', function (req, res, next) {
 })
 
 
-router.post('/join-team/:id', function (req, res, next) {
+router.post('/join-team/:id', auth.required, function (req, res, next) {
     const id = req.params.id;
+    console.log(req.body)
     const {email, fullName, phone} = req.body;
     Team.findById(id).then(team => {
         if (!team) return res.status(404).json({error: 'Team is not found'});
@@ -114,26 +115,26 @@ router.post('/join-team/:id', function (req, res, next) {
         team.save().then(function () {
             return res.status(200).json({msg: 'success'})
         })
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'phuonglv@dev.pupam.com',
-                pass: 'iirrzayeiulwqkkf'
-            }
-        });
-        const mailOptions = {
-            from: 'phuonglv@dev.pupam.com',
-            to: team.email,
-            subject: 'Create account for lic tranding',
-            text: `Nhóm của bạn đã có người tham gia vui lòng gửi key bản quyền trong vòng 7 ngày để vào email ${email}`
-        };
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
-        });
+        // const transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //         user: 'phuonglv@dev.pupam.com',
+        //         pass: 'iirrzayeiulwqkkf'
+        //     }
+        // });
+        // const mailOptions = {
+        //     from: 'phuonglv@dev.pupam.com',
+        //     to: team.email,
+        //     subject: 'Create account for lic tranding',
+        //     text: `Nhóm của bạn đã có người tham gia vui lòng gửi key bản quyền trong vòng 7 ngày để vào email ${email}`
+        // };
+        // transporter.sendMail(mailOptions, function (error, info) {
+        //     if (error) {
+        //         console.log(error);
+        //     } else {
+        //         console.log('Email sent: ' + info.response);
+        //     }
+        // });
     }).catch(e => {
         return res.status(500).json({error: 'server not found'})
     })
