@@ -9,7 +9,7 @@ const User = mongoose.model('User')
 router.post('/create-order', function (req, res, next) {
     console.log(req)
     User.findOne({email: req.body.email}).then(function (user) {
-        if (user) return res.status(400).json({error: 'Please login to join team'})
+        if (user) return res.status(403).json({error: 'Please login to join team'})
         const users = new User();
         const randomPassword = Math.floor(Math.random() * 10000000);
         const text = 'asd';
@@ -55,7 +55,7 @@ router.post('/create-order', function (req, res, next) {
 
 router.post('/create-order-auth', auth.required, function (req, res, next) {
     Team.findOne({email: req.body.email}).then(function (email) {
-        if (!email) return res.status(400).json({message: 'Email is exits '});
+        if (!email) return res.status(403).json({message: 'Email is exits '});
         const order = new Order();
         order.email = req.body.email;
         order.fullName = req.body.fullName;
